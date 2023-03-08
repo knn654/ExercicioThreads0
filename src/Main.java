@@ -21,13 +21,23 @@ public class Main {
 			double tempoFinal = System.nanoTime();
 			double tempoTotal = tempoFinal - tempoInicial;
 			tempoTotal = tempoTotal / Math.pow(10, 9);
-			System.out.println(tempoTotal + " s.");
+			System.out.println("Método for: " + tempoTotal + " s.");
 		}
 	};
 	static Thread ThreadVetor2 = new Thread() {
 		public void run() {
+			int[] vet = new int[tamanho];
+			double tempoInicial = System.nanoTime();
+			for (int i : vet) {
+					vet[i] = 0;
+			}
+			double tempoFinal = System.nanoTime();
+			double tempoTotal = tempoFinal - tempoInicial;
+			tempoTotal = tempoTotal / Math.pow(10, 9);
+			System.out.println("Método foreach: " + tempoTotal + " s.");
 		}
 	};
+	
 	public static void main(String[] args) {
 		int tamanho = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do vetor"));
 		int valor = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do vetor"));
